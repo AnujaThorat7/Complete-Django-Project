@@ -3,11 +3,19 @@
 
 {% block title %}Login{% endblock %}
 
+
+
 {% block content %}
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-</form>
+<div class="jumbotron">
+    <h2>Please Login:</h2>
+    <h3>(Must be SuperUser, please check with the site admin)</h3>
+
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Login">
+       <!-- <input type="hidden" name="next" value="{{ next }}">-->
+    </form>
+
+</div>
 {% endblock %}
